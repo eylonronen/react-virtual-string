@@ -1,7 +1,7 @@
 {
   "name": "react-virtual-string",
   "version": "1.0.0",
-  "description": "A reactimple and light react component to virtually render long strings",
+  "description": "A simple and light react component to virtually render long strings",
   "author": "eylonronen",
   "license": "MIT",
   "repository": "eylonronen/react-virtual-string",
@@ -56,5 +56,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "react-tiny-virtual-list": "^2.2.0"
+  }
 }
