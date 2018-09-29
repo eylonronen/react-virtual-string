@@ -12,11 +12,11 @@ npm install --save react-virtual-string
 
 ## Props
 
-This component wrapps react-tiny-virtual-list so it can accept all of its props, moreover it accepts the following:
-\*text: The text to render.
-rowSeperator: the character/string that signifies line ending(Default is \n).
-rowLength: Maximum number of characters per row(Default is 120).
-rowRender: Function that accpet the row as parameter and returns string/React Component to render for each row.
+This component wrapps react-tiny-virtual-list so it can accept all of its props, moreover it accepts the following:  
+\*text: The text to render.  
+rowSeperator: the character/string that signifies line ending(Default is \n).  
+rowLength: Maximum number of characters per row(Default is 120).  
+rowRender: Function that accpet the row as parameter and returns string/React   Component to render for each row.
 
 \* Required
 
