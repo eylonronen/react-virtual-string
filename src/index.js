@@ -4,6 +4,9 @@ import VirtualList from "react-tiny-virtual-list";
 const escapeRegex = st => st.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 export default ({ text, rowSeperator, rowLength, rowRender, ...listProps }) => {
+  if (!text) {
+    return null;
+  }
   rowLength = rowLength || 120;
   rowSeperator = escapeRegex(rowSeperator) || "\n";
   let reg = `([^${rowSeperator}]{1,${rowLength}}|${rowSeperator}(?=${rowSeperator}))`;
