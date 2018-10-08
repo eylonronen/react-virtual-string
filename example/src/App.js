@@ -9,19 +9,24 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div style={{margin: '100px', padding: '10px',}}>
-        <h1>Rendering the complete "Pride and Prejudice" by Jane Austen(1534 pages, ~14K rows)</h1>
-        <div style={{border: '1px solid black',}}>
+      <div style={{ margin: "100px", padding: "10px" }}>
+        <h1>
+          Rendering the complete "Pride and Prejudice" by Jane Austen(1534
+          pages, ~14K rows)
+        </h1>
+        <div style={{ border: "1px solid black" }}>
           {this.state.show && (
-              <ExampleComponent
-                height={500}
-                itemSize={20}
-                rowLength={200}            
-                rowSeperator = '.'
-                text="The Project Gutenberg EBook of Pride and Prejudice, by Jane Austen
+            <ExampleComponent
+              height={500}
+              itemSize={20}
+              rowLength={200}
+              rowSeperator="\r\n"
+              rowEndChar="\."
+              minRowLength={30}
+              text="The Project Gutenberg EBook of Pride and Prejudice, by Jane Austen
 
     This eBook is for the use of anyone anywhere at no cost and withalmost no restrictions whatsoever.  You may copy it, give it away orre-use it under the terms of the Project Gutenberg License included
-    with this eBook or online at www.gutenberg.org
+    with this eBook or online at www.gutenberg.org.
 
 
     Title: Pride and Prejudice
@@ -13443,9 +13448,9 @@ export default class App extends Component {
     including how to make donations to the Project Gutenberg Literary
     Archive Foundation, how to help produce our new eBooks, and how to
     subscribe to our email newsletter to hear about new eBooks."
-              />
-            )}
-        </div>        
+            />
+          )}
+        </div>
       </div>
     );
   }

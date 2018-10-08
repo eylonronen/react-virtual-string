@@ -1,15 +1,26 @@
 import React from "react";
 import VirtualList from "react-tiny-virtual-list";
 
-const escapeRegex = st => st.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
-export default ({ text, rowSeperator, rowLength, rowRender, ...listProps }) => {
+export default ({
+  text,
+  rowSeperator,
+  rowEndChar,
+  minRowLength,
+  rowLength,
+  rowRender,
+  ...listProps
+}) => {
   if (!text) {
     return null;
   }
   rowLength = rowLength || 120;
-  rowSeperator = escapeRegex(rowSeperator) || "\n";
-  let reg = `([^${rowSeperator}]{1,${rowLength}}|${rowSeperator}(?=${rowSeperator}))`;
+  rowSeperator = rowSeperator || "\n";
+  let reg;
+  if (rowEndChar && minRowLength) {
+    reg = `([^${rowSeperator}]{${minRowLength},${rowLength}}${rowEndChar}|${rowSeperator}(?=${rowSeperator})|[^${rowSeperator}]{1,${rowLength}})`;
+  } else {
+    reg = `(${rowSeperator}(?=${rowSeperator})|[^${rowSeperator}]{1,${rowLength}})`;
+  }
   let rows = text.match(new RegExp(reg, "g"));
   return (
     <VirtualList
