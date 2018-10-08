@@ -1,6 +1,6 @@
 {
   "name": "react-virtual-string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple and light react component to virtually render long strings",
   "author": "eylonronen",
   "license": "MIT",
