@@ -24,6 +24,7 @@ rowRender: Function that accpet the row as parameter and returns string/React Co
 
 ## Usage
 
+Here is an example of virtually rendering the entire "Pride and Prejudice" book.
 ```
 import React, { Component } from "react";
 
